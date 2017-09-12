@@ -14,13 +14,13 @@ import android.widget.Toast;
  * Created by admin on 2/1/2017.
  */
 
-public class AvisosSimpleCursorAdapter extends SimpleCursorAdapter {
+public class MateriaSimpleCursorAdapter extends SimpleCursorAdapter {
     int layoutResourceId;
     ViewHolder holder;
     Context mContext;
-    AvisoDbAdapter myDb;
+    MateriaDbAdapter myDb;
 
-    public AvisosSimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to, int flags, AvisoDbAdapter db) {
+    public MateriaSimpleCursorAdapter(Context context, int layout, Cursor c, String[] from, int[] to, int flags, MateriaDbAdapter db) {
         super(context, layout, c, from, to, flags);
         this.layoutResourceId = layout;
         this.mContext = context;
@@ -47,8 +47,8 @@ public class AvisosSimpleCursorAdapter extends SimpleCursorAdapter {
 //        holder = null;
         if (holder == null) {
             holder = new ViewHolder();
-            holder.colInd = cursor.getColumnIndexOrThrow(AvisoDbAdapter.COL_ID);
-            holder.colImp = cursor.getColumnIndexOrThrow(AvisoDbAdapter.COL_ESTADO);
+            holder.colInd = cursor.getColumnIndexOrThrow(MateriaDbAdapter.COL_ID);
+            holder.colImp = cursor.getColumnIndexOrThrow(MateriaDbAdapter.COL_ESTADO);
 
 //            holder.colInd = position+1;
 //            holder.colImp = MainActivity.mDbAdapter.getEstado(position+1);

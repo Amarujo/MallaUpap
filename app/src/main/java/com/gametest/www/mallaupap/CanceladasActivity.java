@@ -10,7 +10,7 @@ import android.widget.ListView;
 public class CanceladasActivity extends AppCompatActivity {
 
     public static ListView mListCanceladas;
-    private static AvisosSimpleCursorAdapter mCursorAdapter;
+    private static MateriaSimpleCursorAdapter mCursorAdapter;
 
 
     @Override
@@ -20,11 +20,11 @@ public class CanceladasActivity extends AppCompatActivity {
 
         mListCanceladas = (ListView)findViewById(R.id.lista_canceladas);
 
-        mCursorAdapter = new AvisosSimpleCursorAdapter(
+        mCursorAdapter = new MateriaSimpleCursorAdapter(
                 this,
                 R.layout.layout_materia,
                 MainActivity.mDbAdapter.fetchCanceladas(),
-                new String[]{AvisoDbAdapter.COL_MATERIA},
+                new String[]{MateriaDbAdapter.COL_MATERIA},
                 new int[]{R.id.row_text},
                 0,
                 MainActivity.mDbAdapter

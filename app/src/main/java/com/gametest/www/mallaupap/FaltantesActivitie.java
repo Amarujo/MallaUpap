@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class FaltantesActivitie extends AppCompatActivity {
 
     public static ListView mListFaltantes;
-    private static AvisosSimpleCursorAdapter mCursorAdapter;
+    private static MateriaSimpleCursorAdapter mCursorAdapter;
     static Context mContext;
 
     @Override
@@ -28,14 +28,14 @@ public class FaltantesActivitie extends AppCompatActivity {
         Cursor cursor = MainActivity.mDbAdapter.fetchFaltantes();
 
         String[] from = new String[]{
-                AvisoDbAdapter.COL_MATERIA
+                MateriaDbAdapter.COL_MATERIA
         };
 
         int[] to = new int[]{
                 R.id.row_text
         };
 
-        mCursorAdapter = new AvisosSimpleCursorAdapter(
+        mCursorAdapter = new MateriaSimpleCursorAdapter(
                 this,
                 R.layout.layout_materia,
                 cursor,

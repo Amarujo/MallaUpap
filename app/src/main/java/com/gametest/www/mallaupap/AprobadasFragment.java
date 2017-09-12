@@ -20,7 +20,7 @@ import android.widget.ListView;
 public class AprobadasFragment extends Fragment {
 
     public static ListView mList;
-    private static AvisosSimpleCursorAdapter mCursorAdapter;
+    private static MateriaSimpleCursorAdapter mCursorAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,14 +33,14 @@ public class AprobadasFragment extends Fragment {
         Cursor cursor = MainActivity.mDbAdapter.fetchAprobadas();
 
         String[] from = new String[]{
-                AvisoDbAdapter.COL_MATERIA
+                MateriaDbAdapter.COL_MATERIA
         };
 
         int[] to = new int[]{
                 R.id.row_text
         };
 
-        mCursorAdapter = new AvisosSimpleCursorAdapter(
+        mCursorAdapter = new MateriaSimpleCursorAdapter(
                 getContext(),
                 R.layout.layout_materia,
                 cursor,

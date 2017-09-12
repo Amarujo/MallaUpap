@@ -11,7 +11,7 @@ import android.widget.ListView;
 public class AprobadasActivity extends AppCompatActivity {
 
     public static ListView mListAprobadas;
-    private static AvisosSimpleCursorAdapter mCursorAdapter;
+    private static MateriaSimpleCursorAdapter mCursorAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +23,14 @@ public class AprobadasActivity extends AppCompatActivity {
         Cursor cursor = MainActivity.mDbAdapter.fetchAprobadas();
 
         String[] from = new String[]{
-                AvisoDbAdapter.COL_MATERIA
+                MateriaDbAdapter.COL_MATERIA
         };
 
         int[] to = new int[]{
                 R.id.row_text
         };
 
-        mCursorAdapter = new AvisosSimpleCursorAdapter(
+        mCursorAdapter = new MateriaSimpleCursorAdapter(
                 this,
                 R.layout.layout_materia,
                 cursor,

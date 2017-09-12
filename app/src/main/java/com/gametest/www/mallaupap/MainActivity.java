@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity
 
 
     public static ListView mListView;
-    public static AvisoDbAdapter mDbAdapter;
-    public static AvisosSimpleCursorAdapter mCursorAdapter;
+    public static MateriaDbAdapter mDbAdapter;
+    public static MateriaSimpleCursorAdapter mCursorAdapter;
     private Cursor cursor;
 
     ImageButton cancelar;
@@ -62,12 +62,12 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         if (!prefs.getBoolean("FIRSTRUN", false)) {
-            mDbAdapter = new AvisoDbAdapter(this);
+            mDbAdapter = new MateriaDbAdapter(this);
             SharedPreferences.Editor editor = prefs.edit();
             editor.putBoolean("FIRSTRUN", true);
 
             editor.commit();
-        }else mDbAdapter = new AvisoDbAdapter(this, true);
+        }else mDbAdapter = new MateriaDbAdapter(this, true);
 //        mDbAdapter.open();//FOV
 
         if (savedInstanceState==null){
@@ -320,7 +320,7 @@ public class MainActivity extends AppCompatActivity
 //                mDbAdapter);
 //        mListView.setAdapter(mCursorAdapter);
 //        mListView.setSelection(pos);//set the ListView scrolling position. You get it from getFirstVisiblePosition()
-        mCursorAdapter.changeCursor(mDbAdapter.fetchAllReminders());
+        mCursorAdapter.changeCursor(mDbAdapter.fetchAllMaterias());
 
 //        mCursorAdapter.notifyDataSetChanged();
 //        mListView.invalidateViews();
@@ -330,11 +330,11 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         protected Void doInBackground(Void... params) {
-            cursor = mDbAdapter.fetchAllReminders();
+            cursor = mDbAdapter.fetchAllMaterias();
 
             //desde las columnas definidas en la base de datos
             String[] from = new String[]{
-                    AvisoDbAdapter.COL_MATERIA
+                    MateriaDbAdapter.COL_MATERIA
             };
 
             //a la id de views en el layout
@@ -342,7 +342,7 @@ public class MainActivity extends AppCompatActivity
                     R.id.row_text
             };
 
-            mCursorAdapter = new AvisosSimpleCursorAdapter(
+            mCursorAdapter = new MateriaSimpleCursorAdapter(
                     //context
                     MainActivity.this,
                     //el layout de la fila

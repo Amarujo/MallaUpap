@@ -16,7 +16,7 @@ import android.widget.ListView;
 public class CanceladasFragment extends Fragment {
 
     public static ListView mList;
-    private static AvisosSimpleCursorAdapter mCursorAdapter;
+    private static MateriaSimpleCursorAdapter mCursorAdapter;
 
     public CanceladasFragment() {
         // Required empty public constructor
@@ -34,14 +34,14 @@ public class CanceladasFragment extends Fragment {
         Cursor cursor = MainActivity.mDbAdapter.fetchCanceladas();
 
         String[] from = new String[]{
-                AvisoDbAdapter.COL_MATERIA
+                MateriaDbAdapter.COL_MATERIA
         };
 
         int[] to = new int[]{
                 R.id.row_text
         };
 
-        mCursorAdapter = new AvisosSimpleCursorAdapter(
+        mCursorAdapter = new MateriaSimpleCursorAdapter(
                 getContext(),
                 R.layout.layout_materia,
                 cursor,

@@ -4,13 +4,13 @@ package com.gametest.www.mallaupap;
  * Created by admin on 2/1/2017.
  */
 
-public class Aviso {
+public class Materia {
 
     private int mId;
     private String mMateria;
     private int mEstado;
 
-    public Aviso(int id, String content, int important) {
+    public Materia(int id, String content, int important) {
         mId = id;
         mMateria = content;
         mEstado = important;
