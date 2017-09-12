@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_todas"
+            android:icon="@android:drawable/star_big_off"
+            android:checked="true"
+            android:title="Todas las materias"/>
+        <item
+            android:id="@+id/nav_faltan"
+            android:icon="@android:drawable/btn_star"
+
+            android:title="Materias que me faltan"/>
+        <item
+            android:id="@+id/nav_aprobadas"
+            android:icon="@android:drawable/btn_star"
+
+            android:title="Aprobadas"/>
+        <item
+            android:id="@+id/nav_canceladas"
+            android:icon="@android:drawable/btn_star"
+
+            android:title="Canceladas"/>
+    </group>
+
+</menu>

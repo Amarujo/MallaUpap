@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@android:color/white" android:layout_height="50dp">
+
+    <LinearLayout
+        android:id="@+id/materia_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="0dp"
+        android:layout_height="50dp" android:background="@android:color/white">
+
+        <!--<View android:layout_height="match_parent"-->
+              <!--class="android.view.View"-->
+              <!--android:background="?attr/colorBackgroundFloating" android:layout_width="30dp"-->
+              <!--android:id="@+id/row_tab"/>-->
+
+        <TextView
+            android:text="COMUNICACION ORAL Y ESCRITA CASTELLANA (COMUNICACION ORAL Y ESCRITA II) "
+            android:layout_width="0dp"
+            android:layout_height="match_parent" android:id="@+id/row_text"
+            android:paddingLeft="10dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:background="@null"
+            android:textStyle="bold"
+            android:gravity="center_vertical" android:textSize="12sp"/>
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent" android:id="@+id/btn_cancelado"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:src="@drawable/cancelc"
+            android:scaleType="centerCrop"
+            android:background="@null"
+            android:layout_weight="0"
+
+            android:contentDescription="Cancelada"/>
+        <ImageButton
+            android:layout_width="50dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:id="@+id/btn_aprobado"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0" android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@null"
+            android:src="@drawable/okc" android:contentDescription="Aprobada"/>
+    </LinearLayout>
+</LinearLayout>
